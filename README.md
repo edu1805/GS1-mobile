@@ -96,6 +96,8 @@ http://localhost:5000/api/Denuncia/update/${id}
 ```
 > mude no arquivo `app/editarDenuncia/[id].tsx` na linha 37 do código
 ---
+> ⚠️ **Aviso:** Se estiver usando VM lembre de liberar a posta 5000 como protocolo TCP
+---
 
 **5. Inicie o projeto com o Expo**
 ```bash
