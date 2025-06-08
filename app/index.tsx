@@ -1,15 +1,22 @@
-import { View, Text, StyleSheet, Button, Image, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, Button, ScrollView } from 'react-native';
 import { Link } from 'expo-router';
 import Animated, { FadeInDown } from 'react-native-reanimated';
+import { Image } from 'react-native';
 
 export default function HomeScreen() {
   return (
     <View style={styles.page}>
       <View style={styles.header}>
-        <Text style={styles.headerTitle}>🌱 SOS Natureza 🌱</Text>
+        <Text style={styles.headerTitle}>🌱 SOS Natureza</Text>
+        <View style={styles.authButtons}>
+          <Link href="/cadastro" asChild>
+            <Button title="Cadastro" color="#388E3C" />
+          </Link>
+        </View>
       </View>
 
       <ScrollView contentContainerStyle={styles.container}>
+
         <Animated.View entering={FadeInDown.delay(100)} style={styles.imageWrapper}>
           <Image
             source={require('../assets/save-the-planet.png')}
@@ -26,7 +33,7 @@ export default function HomeScreen() {
         </Animated.Text>
 
         <Animated.View entering={FadeInDown.delay(500)} style={styles.buttonContainer}>
-          <Link href="/novaDenuncia" asChild>
+          <Link href="novaDenuncia" asChild>
             <Button title="Fazer Nova Denúncia" color="#388E3C" />
           </Link>
 
@@ -45,25 +52,23 @@ const styles = StyleSheet.create({
   page: {
     flex: 1,
     backgroundColor: '#E8F5E9',
+    marginTop: 30
   },
   header: {
     paddingTop: 20,
     paddingBottom: 20,
     backgroundColor: '#C8E6C9',
-    alignItems: 'center',
     borderBottomWidth: 1,
     borderColor: '#A5D6A7',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 16,
   },
   headerTitle: {
-    fontSize: 24,
+    fontSize: 22,
     fontWeight: 'bold',
     color: '#1B5E20',
-  },
-  container: {
-    padding: 24,
-    alignItems: 'center',
-    flexGrow: 1,
-    justifyContent: 'center',
   },
   imageWrapper: {
     width: 220,
@@ -76,8 +81,18 @@ const styles = StyleSheet.create({
     height: '100%',
     
   },
+  authButtons: {
+    flexDirection: 'row',
+    marginLeft: 8,
+  },
+  container: {
+    padding: 24,
+    alignItems: 'center',
+    flexGrow: 1,
+    justifyContent: 'center',
+  },
   description: {
-    fontSize: 19,
+    fontSize: 16,
     color: '#2E7D32',
     textAlign: 'justify',
     marginBottom: 32,
