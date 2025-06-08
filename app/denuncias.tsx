@@ -30,10 +30,16 @@ const DenunciaCard = ({ denuncia, onDelete }: Props) => {
     <View style={styles.card}>
       <View style={styles.header}>
         <Text style={styles.categoria}>{denuncia.categoria.toUpperCase()}</Text>
-        <TouchableOpacity onPress={() => onDelete(denuncia.id)}>
-          <MaterialIcons name="delete" size={24} color="#C62828" />
-        </TouchableOpacity>
+        <View style={{ flexDirection: 'row', gap: 10 }}>
+          <TouchableOpacity onPress={() => router.push(`/editarDenuncia/${denuncia.id}`)}>
+            <MaterialIcons name="edit" size={24} color="#1976D2" />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => onDelete(denuncia.id)}>
+            <MaterialIcons name="delete" size={24} color="#C62828" />
+          </TouchableOpacity>
+        </View>
       </View>
+
       <Text style={styles.descricao}>{denuncia.descricao}</Text>
       <Text style={styles.data}>{`${dataFormatada} ${horaFormatada}`}</Text>
     </View>

@@ -42,6 +42,12 @@ export default function HomeScreen() {
           <Link href="/denuncias" asChild>
             <Button title="Ver Denúncias" color="#2E7D32" />
           </Link>
+
+          <View style={styles.spacing} />
+
+          <Link href="/mapa" asChild>
+            <Button title="Ver localização" color="#2E7D32" />
+          </Link>
         </Animated.View>
       </ScrollView>
     </View>
