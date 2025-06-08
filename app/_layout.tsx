@@ -44,6 +44,16 @@ export default function Layout() {
             ),
           }}
         />
+        <Drawer.Screen
+          name="mapa"
+          options={{
+            title: "Mapa",
+            drawerIcon: ({ color, size }) => (
+              <FontAwesome5 name="map-marked-alt" size={size} color={color} />
+            ),
+          }}
+        />
+
         {/* Editar denúncia é rota dinâmica, não precisa estar no menu */}
       </Drawer>
     </UserProvider>
